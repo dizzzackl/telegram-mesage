@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import telebot
 app = Flask(__name__)
 bot = telebot.TeleBot('7090253365:AAGbr_LloonFPGCIPbOgSRFfTAwt5dsmcMs')
@@ -16,4 +16,3 @@ def enter_message():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
