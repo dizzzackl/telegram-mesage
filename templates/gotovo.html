@@ -3,100 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="https://web.telegram.org/a/icon-192x192.png" type="image/x-icon">
-    <title>Telegram mesage</title>
+    <title>Telegram Message</title>
     <style>
-        html{
+        html {
             background: #212121;
         }
-        .h33{
+
+        h1 {
             color: azure;
+            position: fixed;
+            top: -5px;
+            left: 3%;
+        }
+
+        .p1, .p2, .p3 {
+            color: azure;
+            position: fixed;
+            left: 60px;
+        }
+
+        .p1 {
+            top: 39%;
+        }
+
+        .p2 {
+            top: 44%;
+        }
+
+        .p3 {
+            top: 49%;
+        }
+
+        .q1, .q2, .q3 {
+            position: fixed;
+            left: 15px;
+        }
+
+        .q1 {
+            top: 40%;
+        }
+
+        .q2 {
+            top: 45%;
+        }
+
+        .q3 {
+            top: 50%;
+        }
+
+        .vav {
+            position: fixed;
+            top: 9%;
+            left: 3%;
+            border-radius: 5px
+        }
+
+        .form {
             position: fixed;
             top: 55%;
-            left: 20%;
+            left: 2%;
         }
-        h1{
+
+        .upload {
+            background: #8774E1;
+            border-radius: 5px;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        p {
             color: azure;
-            position: fixed;
-            top: 7%;
-            left: 20%;
+            width: auto;
+            height: 20px;
         }
-        .p1{
-            color: azure;
-            position: fixed;
-            top: 15%;
-            left: 22%;
-        }
-        .p2{
-            color: azure;
-            position: fixed;
-            top: 20%;
-            left: 22%;
-        }
-        .p3{
-            color: azure;
-            position: fixed;
-            top: 25%;
-            left: 22%;
-        }
-        .q1{
-            position: fixed;
-            top: 16%;
-            left: 358px;
-        }
-        .q2{
-            position: fixed;
-            top: 21%;
-            left: 352px;
-        }
-        .q3{
-            position: fixed;
-            top: 26%;
-            left: 354px;
-        }
-        .form{
-            position: fixed;
-            top: 30%;
-            left: 352px;
-            .upload{
-                background: #8774E1;
-                border-radius: 5px;
-            }
-            p{
-                color: azure;
-                width: auto;
-                height: 20px;
-            }
-            input{
-                border-radius: 5px;
-                width: 170px;
-            }
+
+        input[type="text"] {
+            border-radius: 5px;
+            width: 170px;
+            height: 25px;
+            padding: 5px;
+            border: none;
         }
     </style>
 </head>
 <body>
+    <h1>Напиши снизу сообщение и chat ID, и бот отправит сообщение</h1>
+    <img class="vav" src="https://catherineasquithgallery.com/uploads/posts/2021-02/1612740479_8-p-goluboi-fon-telegramm-10.png" alt="соси хуй" width="50%" height="300">
+    <p class="p1">PS: Я не несу ответственность за ваши сообщения</p>
+    <img class="q1" src="{{ url_for('static', filename='1.png') }}">
+    <p class="p2">Пожалуйста, не жалуйтесь на бота и не сносите сайт</p>
+    <img class="q2" src="{{ url_for('static', filename='2.png') }}">
+    <p class="p3">Не подавайте на меня в суд (по возможности)</p>
+    <img class="q3" src="{{ url_for('static', filename='3.png') }}">
+    <form class="form" action="/enter_message" method="POST" enctype="multipart/form-data">
+        <br>
+        <input type="text" name="text" placeholder="Сообщение" autocomplete="off">
+        <br>
+        <br>
 
-<h1>Напиши снизу сообщение и чат id, и бот отправит сообщение</h1>
-<p class="p1">PS:Я не несу ответственность за ваши сообщения,</p>
-<img class="q1" src="{{ url_for('static', filename='1.png') }}">
-<p class="p2">пж не жалуйтесь на бота и не сносите сайт </p>
-<img class="q2" src="{{ url_for('static', filename='2.png') }}">
-<p class="p3">не подавайте на меня  суд (по возможности)</p>
-<img class="q3" src="{{ url_for('static', filename='3.png') }}">
-<br>
-<br>
-<br>
-<form class="form" action="/enter_message" method="POST" enctype="multipart/form-data">
-    <br>
-    <input type="text" name="text" value="Сообщение:">
-    <br>
-    <input type="text" name="chat_id" value="Чат id:">
-    <br>
-    <br>
-    <br>
-    <input  class="upload" type="submit" value="Отправить">
-    <p style="color: azure">Сообщение отправленно</p>
+        <input type="text" name="chat_id" placeholder="Chat ID" autocomplete="off">
+        <br>
+        <br>
+        <br>
+        <input class="upload" type="submit" value="Отправить">
+        <h3>Сообщение отправленно </h3>
     </form>
-
-
 </body>
 </html>
